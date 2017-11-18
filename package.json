@@ -1,0 +1,23 @@
+{
+  "name": "paper-kitchen-sink",
+  "version": "1.0.0",
+  "description": "A collection of paper element web components in one page. It can be used as a cheat sheet.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "polymer serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reyarqueza/paper-kitchen-sink.git"
+  },
+  "author": "Rey Arqueza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reyarqueza/paper-kitchen-sink/issues"
+  },
+  "homepage": "https://github.com/reyarqueza/paper-kitchen-sink#readme",
+  "devDependencies": {
+    "polymer-cli": "^1.5.7"
+  }
+}
