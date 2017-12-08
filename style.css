@@ -1,0 +1,46 @@
+/* just for layout purposes for the paper kitchen sink */
+body {
+    padding-top: 100px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 120px;
+
+    justify-items: center;
+    align-items: center;
+}
+
+.dual-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 20px;
+}
+
+.container,
+.dual-container {
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+.container div,
+.dual-container div {
+    text-align: center;
+}
+
+.container div span,
+.dual-container div span {
+    color: #aaa;
+    display: block;
+    padding-bottom: 8px;
+}
+
+.container div paper-progress,
+.container div paper-checkbox {
+    margin-bottom: 8px;
+}
+
+.container div paper-checkbox {
+    display: block;
+}

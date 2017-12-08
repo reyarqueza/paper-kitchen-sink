@@ -2,7 +2,6 @@
 <html>
 
 <head>
-
     <!-- Polyfill for browsers that do not support native webcomponents -->
     <script src="/bower_components/webcomponentsjs/webcomponents-loader.js"></script>
 
@@ -26,110 +25,98 @@
     <link rel="import" href="/bower_components/iron-icons/maps-icons.html">
     <link rel="import" href="/bower_components/iron-icons/places-icons.html">
 
-    <!-- paper element compontents -->
+    <!-- paper element components -->
     <link rel="import" href="/bower_components/paper-checkbox/paper-checkbox.html">
     <link rel="import" href="/bower_components/paper-slider/paper-slider.html">
     <link rel="import" href="/bower_components/paper-progress/paper-progress.html">
     <link rel="import" href="/bower_components/paper-toggle-button/paper-toggle-button.html">
     <link rel="import" href="/bower_components/paper-input/paper-input.html">
-
     <link rel="import" href="/bower_components/paper-item/paper-item.html">
     <link rel="import" href="/bower_components/paper-listbox/paper-listbox.html">
     <link rel="import" href="/bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
-
     <link rel="import" href="/bower_components/paper-menu-button/paper-menu-button.html">
-
     <link rel="import" href="/bower_components/paper-radio-button/paper-radio-button.html">
     <link rel="import" href="/bower_components/paper-radio-group/paper-radio-group.html">
-
     <link rel="import" href="/bower_components/paper-button/paper-button.html">
     <link rel="import" href="/bower_components/paper-dialog/paper-dialog.html">
-
     <link rel="import" href="/bower_components/paper-fab/paper-fab.html">
     <link rel="import" href="/bower_components/paper-icon-button/paper-icon-button.html">
     <link rel="import" href="/bower_components/paper-badge/paper-badge.html">
-
     <link rel="import" href="/bower_components/paper-card/paper-card.html">
     <link rel="import" href="/bower_components/paper-spinner/paper-spinner.html">
+    <link rel="import" href="/bower_components/paper-swatch-picker/paper-swatch-picker.html">
+    <link rel="import" href="/bower_components/paper-tabs/paper-tabs.html">
 
-    <style>
-        xmp {
-            border: 1px solid #ccc;
-            color: #ccc;
-            margin-bottom: 50px;
-        }
+    <!-- Note that as of `paper-tooltip#2.0.0`,you must explicitely include the `web-animations` -->
+    <link rel="import" href="/bower_components/neon-animation/web-animations.html">
+    <link rel="import" href="/bower_components/paper-tooltip/paper-tooltip.html">
 
-        xmp::selection {
-            background: #000;
-            color: #fff;
-        }
-    </style>
+    <!-- PolymerElements/app-layout -->
+    <link rel="import" href="/bower_components/app-layout/app-layout.html">
+    <link rel="import" href="/bower_components/app-layout/app-drawer/app-drawer.html">
+    <link rel="import" href="/bower_components/app-layout/app-header/app-header.html">
+    <link rel="import" href="/bower_components/app-layout/app-toolbar/app-toolbar.html">
+
+    <!-- ignore this, its just used to layout the different components -->
+    <link rel="stylesheet" href="/style.css">
 
 </head>
 
 <body>
+    <!-- custom style is just for the app-header -->
+    <custom-style>
+        <style is="custom-style">
+            html,
+            body {
+                margin: 0;
+                font-family: 'Roboto', 'Noto', sans-serif;
+                -webkit-font-smoothing: antialiased;
+                max-height: 368px;
+            }
 
-    <paper-checkbox checked>Checked</paper-checkbox>
-    <xmp>
-        <paper-checkbox checked>Checked</paper-checkbox>
-    </xmp>
+            app-toolbar {
+                background-color: #4285f4;
+                color: #fff;
+            }
 
-    <paper-checkbox disabled>Disabled</paper-checkbox>
-    <xmp>
-        <paper-checkbox disabled>Disabled</paper-checkbox>
-    </xmp>
+            paper-icon-button {
+                --paper-icon-button-ink-color: white;
+            }
 
-    <paper-toggle-button checked="">Toggle</paper-toggle-button>
-    <xmp>
-        <paper-toggle-button checked="">Toggle</paper-toggle-button>
-    </xmp>
+            paper-icon-button+[main-title] {
+                margin-left: 24px;
+            }
 
-    <paper-progress value="800" min="100" max="1000"></paper-progress>
-    <xmp>
-        <paper-progress value="800" min="100" max="1000"></paper-progress>
-    </xmp>
+            app-header {
+                @apply --layout-fixed-top;
+                color: #fff;
+                --app-header-background-rear-layer: {
+                    background-color: #ef6c00;
+                }
+                ;
+            }
 
-    <paper-progress value="30" secondary-progress="70"></paper-progress>
-    <xmp>
-        <paper-progress value="30" secondary-progress="70"></paper-progress>
-    </xmp>
+            app-drawer {
+                --app-drawer-scrim-background: rgba(0, 0, 100, 0.8);
+                --app-drawer-content-container: {
+                    background-color: #B0BEC5;
+                }
+            }
+        </style>
+    </custom-style>
+    <app-header style="height: 96px;" condenses fixed>
+        <app-toolbar sticky style="height: 64px;">
+            <paper-icon-button icon="menu" onclick="drawer.toggle()"></paper-icon-button>
+            <div main-title>app-header app-toolbar</div>
+            <paper-icon-button icon="delete"></paper-icon-button>
+            <paper-icon-button icon="search"></paper-icon-button>
+            <paper-icon-button icon="close"></paper-icon-button>
+        </app-toolbar>
+    </app-header>
+    <app-drawer id="drawer" swipe-open>
+        <span>app-drawer</span>
 
-    <paper-progress indeterminate=""></paper-progress>
-    <xmp>
-        <paper-progress indeterminate=""></paper-progress>
-    </xmp>
-
-    <paper-slider pin="" max="10" step="1" value="5"></paper-slider>
-    <xmp>
-        <paper-slider pin="" max="10" step="1" value="5"></paper-slider>
-    </xmp>
-
-    <paper-slider value="23" max="255"></paper-slider>
-    <xmp>
-        <paper-slider value="23" max="255"></paper-slider>
-    </xmp>
-
-    <paper-slider value="0" max="255" secondary-progress="170"></paper-slider>
-    <xmp>
-        <paper-slider value="0" max="255" secondary-progress="170"></paper-slider>
-    </xmp>
-
-    <paper-input placeholder="paper-input" label="My label"></paper-input>
-    <xmp>
-        <paper-input placeholder="paper-input" label="My label"></paper-input>
-    </xmp>
-
-    <paper-listbox slot="dropdown-content" selected="1">
-        <paper-item>Earth</paper-item>
-        <paper-item>Jupiter</paper-item>
-        <paper-item>Mars</paper-item>
-        <paper-item>Saturn</paper-item>
-        <paper-item>Neptune</paper-item>
-        <paper-item>Uranus</paper-item>
-        <paper-item>Venus</paper-item>
-        <paper-item>Mercury</paper-item>
-    </paper-listbox>
-    <xmp>
+        <span>paper-listbox</span>
         <paper-listbox slot="dropdown-content" selected="1">
             <paper-item>Earth</paper-item>
             <paper-item>Jupiter</paper-item>
@@ -140,184 +127,163 @@
             <paper-item>Venus</paper-item>
             <paper-item>Mercury</paper-item>
         </paper-listbox>
-    </xmp>
+    </app-drawer>
 
-    <paper-dropdown-menu label="Planets">
-        <paper-listbox slot="dropdown-content" selected="1">
-            <paper-item>Earth</paper-item>
-            <paper-item>Jupiter</paper-item>
-            <paper-item>Mars</paper-item>
-            <paper-item>Saturn</paper-item>
-            <paper-item>Neptune</paper-item>
-            <paper-item>Uranus</paper-item>
-            <paper-item>Venus</paper-item>
-            <paper-item>Mercury</paper-item>
-        </paper-listbox>
-    </paper-dropdown-menu>
-    <xmp>
-        <paper-dropdown-menu label="Planets">
-            <paper-listbox slot="dropdown-content" selected="1">
-                <paper-item>Earth</paper-item>
-                <paper-item>Jupiter</paper-item>
-                <paper-item>Mars</paper-item>
-                <paper-item>Saturn</paper-item>
-                <paper-item>Neptune</paper-item>
-                <paper-item>Uranus</paper-item>
-                <paper-item>Venus</paper-item>
-                <paper-item>Mercury</paper-item>
-            </paper-listbox>
-        </paper-dropdown-menu>
-    </xmp>
-
-    <paper-radio-group selected="hot">
-        <paper-radio-button name="hot">Hot</paper-radio-button>
-        <paper-radio-button name="warm">Warm</paper-radio-button>
-        <paper-radio-button name="cold">Cold</paper-radio-button>
-    </paper-radio-group>
-    <xmp>
-        <paper-radio-group selected="hot">
-            <paper-radio-button name="hot">Hot</paper-radio-button>
-            <paper-radio-button name="warm">Warm</paper-radio-button>
-            <paper-radio-button name="cold">Cold</paper-radio-button>
-        </paper-radio-group>
-    </xmp>
-
-    <paper-button raised>Button</paper-button>
-    <xmp>
-        <paper-button raised>Button</paper-button>
-    </xmp>
-
-    <paper-menu-button>
-        <paper-icon-button icon="menu" slot="dropdown-trigger" alt="menu"></paper-icon-button>
-        <paper-listbox slot="dropdown-content">
-            <paper-item>alpha</paper-item>
-            <paper-item>beta</paper-item>
-            <paper-item>gamma</paper-item>
-            <paper-item>delta</paper-item>
-            <paper-item>epsilon</paper-item>
-        </paper-listbox>
-    </paper-menu-button>
-    <xmp>
-        <paper-menu-button>
-            <paper-icon-button icon="menu" slot="dropdown-trigger" alt="menu"></paper-icon-button>
-            <paper-listbox slot="dropdown-content">
-                <paper-item>alpha</paper-item>
-                <paper-item>beta</paper-item>
-                <paper-item>gamma</paper-item>
-                <paper-item>delta</paper-item>
-                <paper-item>epsilon</paper-item>
-            </paper-listbox>
-        </paper-menu-button>
-    </xmp>
-
-    <paper-button raised onclick="dialog.open()">Open Dialog</paper-button>
-    <paper-dialog modal id="dialog">
-        <h2>Dialog Title</h2>
-        <p>This is a dialog box using Web Components from Google's Polymer project.</p>
-        <div class="buttons">
-            <paper-button raised>More Info...</paper-button>
-            <paper-button raised dialog-dismiss>Decline</paper-button>
-            <paper-button raised dialog-confirm autofocus>Accept</paper-button>
+    <div class="container">
+        <div>
+            <span>paper-fab</span>
+            <paper-fab icon="reply" title="reply"></paper-fab>
         </div>
-    </paper-dialog>
-    <xmp>
-        <paper-button onclick="dialog.open()">Button</paper-button>
-        <paper-dialog modal id="dialog">
-            <h2>Dialog Title</h2>
-            <p>This is a dialog box using Web Components from Google's Polymer project.</p>
-            <div class="buttons">
-                <paper-button>More Info...</paper-button>
-                <paper-button dialog-dismiss>Decline</paper-button>
-                <paper-button dialog-confirm autofocus>Accept</paper-button>
-            </div>
-        </paper-dialog>
-    </xmp>
-
-    <paper-fab icon="favorite" title="heart"></paper-fab>
-    <paper-fab disabled icon="reply" title="reply"></paper-fab>
-    <paper-fab class="label" label="😻" title="heart eyes cat"></paper-fab>
-    <xmp>
-        <paper-fab icon="favorite" title="heart"></paper-fab>
-        <paper-fab disabled icon="reply" title="reply"></paper-fab>
-        <paper-fab class="label" label="😻" title="heart eyes cat"></paper-fab>
-    </xmp>
-
-    <paper-icon-button icon="favorite"></paper-icon-button>
-    <paper-icon-button icon="menu"></paper-icon-button>
-    <paper-icon-button icon="star"></paper-icon-button>
-    <xmp>
-        <paper-icon-button icon="favorite"></paper-icon-button>
-        <paper-icon-button icon="menu"></paper-icon-button>
-        <paper-icon-button icon="star"></paper-icon-button>
-    </xmp>
-
-    <paper-icon-button id="number" icon="communication:email" alt="inbox">
-    </paper-icon-button>
-    <paper-badge for="number" label="4">
-    </paper-badge>
-
-    <paper-icon-button id="icon" icon="account-box" alt="person">
-    </paper-icon-button>
-    <paper-badge icon="social:mood" for="icon" label="happy">
-    </paper-badge>
-    <xmp>
-        <paper-icon-button id="number" icon="communication:email" alt="inbox">
-        </paper-icon-button>
-        <paper-badge for="number" label="4">
-        </paper-badge>
-
-        <paper-icon-button id="icon" icon="account-box" alt="person">
-        </paper-icon-button>
-        <paper-badge icon="social:mood" for="icon" label="happy">
-        </paper-badge>
-    </xmp>
-
-    <paper-card image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRf4sVrEfV-n4Jw5KKZ6SJime1-E49A6eLPSDMMoMg1XIIobHB">
-        <div class="card-content">
-            Beef Soup House
-            <iron-icon icon="communication:location-on"></iron-icon>
-            <span>250ft</span>
-            <iron-icon icon="star"></iron-icon>
-            <iron-icon icon="star"></iron-icon>
-            <iron-icon icon="star"></iron-icon>
-            <iron-icon icon="star"></iron-icon>
-            <iron-icon icon="star"></iron-icon>
+        <div>
+            <span>paper-button</span>
+            <paper-button raised>Button</paper-button>
         </div>
-        <div class="card-actions">
-            <paper-icon-button icon="icons:event"></paper-icon-button>
-            <paper-button>5:30PM</paper-button>
-            <paper-button>7:30PM</paper-button>
-            <paper-button>9:00PM</paper-button>
-            <paper-button class="cafe-reserve">Reserve</paper-button>
+        <div>
+            <span>paper-dialog</span>
+            <paper-button raised onclick="dialog.open()">Open Dialog</paper-button>
+            <paper-dialog modal id="dialog">
+                <h2>paper-dialog modal</h2>
+                <p>This is a dialog box using Web Components from Google's Polymer project.</p>
+                <div class="buttons">
+                    <paper-button raised>More Info...</paper-button>
+                    <paper-button raised dialog-dismiss>Decline</paper-button>
+                    <paper-button raised dialog-confirm autofocus>Accept</paper-button>
+                </div>
+            </paper-dialog>
         </div>
-    </paper-card>
-    <xmp>
-        <paper-card image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRf4sVrEfV-n4Jw5KKZ6SJime1-E49A6eLPSDMMoMg1XIIobHB">
-            <div class="card-content">
-                Beef Soup House
-                <iron-icon icon="communication:location-on"></iron-icon>
-                <span>250ft</span>
-                <iron-icon icon="star"></iron-icon>
-                <iron-icon icon="star"></iron-icon>
-                <iron-icon icon="star"></iron-icon>
-                <iron-icon icon="star"></iron-icon>
-                <iron-icon icon="star"></iron-icon>
-            </div>
-            <div class="card-actions">
-                <paper-icon-button icon="icons:event"></paper-icon-button>
-                <paper-button>5:30PM</paper-button>
-                <paper-button>7:30PM</paper-button>
-                <paper-button>9:00PM</paper-button>
-                <paper-button class="cafe-reserve">Reserve</paper-button>
-            </div>
-        </paper-card>
-    </xmp>
+        <div>
+            <span>paper-menu-button</span>
+            <paper-menu-button>
+                <paper-icon-button icon="menu" slot="dropdown-trigger" alt="menu"></paper-icon-button>
+                <paper-listbox slot="dropdown-content">
+                    <paper-item>alpha</paper-item>
+                    <paper-item>beta</paper-item>
+                    <paper-item>gamma</paper-item>
+                    <paper-item>delta</paper-item>
+                    <paper-item>epsilon</paper-item>
+                </paper-listbox>
+            </paper-menu-button>
+        </div>
+        <div>
+            <span>paper-swatch-picker</span>
+            <paper-swatch-picker></paper-swatch-picker>
+        </div>
+    </div>
+    <div class="container">
+        <div>
+            <span>paper-icon-button</span>
+            <span>paper-badge</span>
+            <paper-icon-button icon="star"></paper-icon-button>
 
-    <paper-spinner active></paper-spinner>
-    <xmp>
-        <paper-spinner active></paper-spinner>
-    </xmp>
-    
+            <paper-icon-button id="number" icon="communication:email" alt="inbox">
+            </paper-icon-button>
+            <paper-badge for="number" label="4">
+            </paper-badge>
+
+            <paper-icon-button id="icon" icon="account-box" alt="person">
+            </paper-icon-button>
+            <paper-badge icon="social:mood" for="icon" label="happy">
+            </paper-badge>
+        </div>
+        <div>
+            <span>paper-toggle-button</span>
+            <paper-toggle-button checked="">Toggle</paper-toggle-button>
+        </div>
+        <div>
+            <span>paper-tooltip</span>
+            <paper-tooltip for="id_1" offset="0">The paper-tooltip pops up
+                <br>after a few milliseconds of hovering.</paper-tooltip>
+            <p id="id_1">Hover Over Me!</p>
+        </div>
+        <div>
+            <span>paper-slider</span>
+            <paper-slider value="23" max="255"></paper-slider>
+            <paper-slider pin="" max="10" step="1" value="5"></paper-slider>
+        </div>
+        <div>
+            <span>paper-dropdown-menu</span>
+            <paper-dropdown-menu label="Planets">
+                <paper-listbox slot="dropdown-content" selected="1">
+                    <paper-item>Earth</paper-item>
+                    <paper-item>Jupiter</paper-item>
+                    <paper-item>Mars</paper-item>
+                    <paper-item>Saturn</paper-item>
+                    <paper-item>Neptune</paper-item>
+                    <paper-item>Uranus</paper-item>
+                    <paper-item>Venus</paper-item>
+                    <paper-item>Mercury</paper-item>
+                </paper-listbox>
+            </paper-dropdown-menu>
+        </div>
+    </div>
+    <div class="container">
+        <div>
+            <span>paper-checkbox</span>
+            <paper-checkbox id="id_1" checked>Checked</paper-checkbox>
+            <paper-checkbox disabled>Disabled</paper-checkbox>
+        </div>
+        <div>
+            <span>paper-radio-button</span>
+            <paper-radio-group selected="hot">
+                <paper-radio-button name="hot">Hot</paper-radio-button>
+                <paper-radio-button name="cold">Cold</paper-radio-button>
+            </paper-radio-group>
+        </div>
+        <div>
+            <span>paper-spinner</span>
+            <paper-spinner active></paper-spinner>
+        </div>
+        <div>
+            <span>paper-progress</span>
+            <paper-progress value="800" min="100" max="1000"></paper-progress>
+            <paper-progress value="30" secondary-progress="70"></paper-progress>
+            <paper-progress indeterminate=""></paper-progress>
+        </div>
+        <div style="text-align: left;">
+            <span>paper-input</span>
+            <paper-input placeholder="Your text..." label="Label"></paper-input>
+        </div>
+    </div>
+
+    <div class="dual-container">
+        <div>
+            <span>paper-card</span>
+            <paper-card image="images/paper-sample-bg.jpg">
+                <div class="card-content">
+                    House of Material Design
+                    <iron-icon icon="communication:location-on"></iron-icon>
+                    <span>250ft</span>
+                    <iron-icon icon="star"></iron-icon>
+                    <iron-icon icon="star"></iron-icon>
+                    <iron-icon icon="star"></iron-icon>
+                    <iron-icon icon="star"></iron-icon>
+                    <iron-icon icon="star"></iron-icon>
+                </div>
+                <div class="card-actions">
+                    <paper-icon-button icon="icons:event"></paper-icon-button>
+                    <paper-button>5:30PM</paper-button>
+                    <paper-button>7:30PM</paper-button>
+                    <paper-button>9:00PM</paper-button>
+                    <paper-button class="cafe-reserve">Reserve</paper-button>
+                </div>
+            </paper-card>
+        </div>
+        <div>
+            <span>paper-tabs</span>
+            <style>
+                paper-tabs {
+                    background: #4285f4;
+                    color: white;
+                }
+            </style>
+            <paper-tabs selected="0" scrollable>
+                <paper-tab>The first tab</paper-tab>
+                <paper-tab>Tab two</paper-tab>
+                <paper-tab>The third tab</paper-tab>
+                <paper-tab>Fourth tab</paper-tab>
+            </paper-tabs>
+        </div>
+    </div>
 </body>
 
 </html>

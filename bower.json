@@ -21,12 +21,12 @@
   ],
   "dependencies": {
     "polymer": "Polymer/polymer#^2.2.0",
-    "paper-checkbox": "^2.0.1",
-    "paper-styles": "^2.0.0",
-    "paper-slider": "^2.0.3",
-    "paper-progress": "^2.0.1",
-    "paper-toggle-button": "^2.0.0",
-    "paper-input": "^2.0.3",
+    "paper-checkbox": "PolymerElements/paper-checkbox#^2.0.1",
+    "paper-styles": "PolymerElements/paper-styles#^2.0.0",
+    "paper-slider": "PolymerElements/paper-slider#^2.0.4",
+    "paper-progress": "PolymerElements/paper-progress#^2.0.1",
+    "paper-toggle-button": "PolymerElements/paper-toggle-button#^2.0.0",
+    "paper-input": "PolymerElements/paper-input#^2.0.3",
     "paper-dropdown-menu": "PolymerElements/paper-dropdown-menu#^2.0.0",
     "paper-listbox": "PolymerElements/paper-listbox#^2.0.0",
     "paper-item": "PolymerElements/paper-item#^2.0.0",
@@ -39,6 +39,11 @@
     "paper-badge": "PolymerElements/paper-badge#^2.0.0",
     "paper-icon-button": "PolymerElements/paper-icon-button#^2.0.1",
     "paper-card": "PolymerElements/paper-card#^2.0.0",
-    "paper-menu-button": "PolymerElements/paper-menu-button#^2.0.0"
+    "paper-menu-button": "PolymerElements/paper-menu-button#^2.0.0",
+    "paper-spinner": "PolymerElements/paper-spinner#^2.0.0",
+    "paper-swatch-picker": "PolymerElements/paper-swatch-picker#^2.0.1",
+    "paper-tabs": "PolymerElements/paper-tabs#^2.0.0",
+    "paper-tooltip": "PolymerElements/paper-tooltip#^2.0.1",
+    "app-layout": "PolymerElements/app-layout#^2.0.4"
   }
 }
