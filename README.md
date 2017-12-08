@@ -39,5 +39,6 @@ npm run dev
 
 5) Follow the directions on the terminal. Most likely it will tell you to open your browser at http://127.0.0.1:8081/ or some other local url depending on your environment.
 
-6) The page will display a collage of paper elements:
+The page will display a collage of paper elements:
+
 ![paper kitchen sink - screenshot](images/paper-kitchen-sink-screenshot.png)
