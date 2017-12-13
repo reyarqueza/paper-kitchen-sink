@@ -57,12 +57,21 @@
     <link rel="import" href="/bower_components/app-layout/app-header/app-header.html">
     <link rel="import" href="/bower_components/app-layout/app-toolbar/app-toolbar.html">
 
+    <!-- third party paper elements -->
+    <!-- justinribeiro/paper-snackbar -->
+    <link rel="import" href="/bower_components/paper-snackbar/paper-snackbar.html">
+
+    <!-- ThomasCybulski/paper-chip -->
+    <link rel="import" href="/bower_components/paper-chip/paper-chip.html">
+    <link rel="import" href="/bower_components/paper-chip/paper-chip-input.html">
+
     <!-- ignore this, its just used to layout the different components -->
     <link rel="stylesheet" href="/style.css">
 
 </head>
 
 <body>
+
     <!-- custom style is just for the app-header -->
     <custom-style>
         <style is="custom-style">
@@ -114,9 +123,9 @@
         </app-toolbar>
     </app-header>
     <app-drawer id="drawer" swipe-open>
-        <span>app-drawer</span>
+        <span class="tag-name">app-drawer</span>
 
-        <span>paper-listbox</span>
+        <span class="tag-name">paper-listbox</span>
         <paper-listbox slot="dropdown-content" selected="1">
             <paper-item>Earth</paper-item>
             <paper-item>Jupiter</paper-item>
@@ -131,15 +140,15 @@
 
     <div class="container">
         <div>
-            <span>paper-fab</span>
+            <span class="tag-name">paper-fab</span>
             <paper-fab icon="reply" title="reply"></paper-fab>
         </div>
         <div>
-            <span>paper-button</span>
+            <span class="tag-name">paper-button</span>
             <paper-button raised>Button</paper-button>
         </div>
         <div>
-            <span>paper-dialog</span>
+            <span class="tag-name">paper-dialog</span>
             <paper-button raised onclick="dialog.open()">Open Dialog</paper-button>
             <paper-dialog modal id="dialog">
                 <h2>paper-dialog modal</h2>
@@ -152,7 +161,7 @@
             </paper-dialog>
         </div>
         <div>
-            <span>paper-menu-button</span>
+            <span class="tag-name">paper-menu-button</span>
             <paper-menu-button>
                 <paper-icon-button icon="menu" slot="dropdown-trigger" alt="menu"></paper-icon-button>
                 <paper-listbox slot="dropdown-content">
@@ -165,14 +174,14 @@
             </paper-menu-button>
         </div>
         <div>
-            <span>paper-swatch-picker</span>
+            <span class="tag-name">paper-swatch-picker</span>
             <paper-swatch-picker></paper-swatch-picker>
         </div>
     </div>
     <div class="container">
         <div>
-            <span>paper-icon-button</span>
-            <span>paper-badge</span>
+            <span class="tag-name">paper-icon-button</span>
+            <span class="tag-name">paper-badge</span>
             <paper-icon-button icon="star"></paper-icon-button>
 
             <paper-icon-button id="number" icon="communication:email" alt="inbox">
@@ -186,22 +195,22 @@
             </paper-badge>
         </div>
         <div>
-            <span>paper-toggle-button</span>
+            <span class="tag-name">paper-toggle-button</span>
             <paper-toggle-button checked="">Toggle</paper-toggle-button>
         </div>
         <div>
-            <span>paper-tooltip</span>
+            <span class="tag-name">paper-tooltip</span>
             <paper-tooltip for="id_1" offset="0">The paper-tooltip pops up
                 <br>after a few milliseconds of hovering.</paper-tooltip>
             <p id="id_1">Hover Over Me!</p>
         </div>
         <div>
-            <span>paper-slider</span>
+            <span class="tag-name">paper-slider</span>
             <paper-slider value="23" max="255"></paper-slider>
             <paper-slider pin="" max="10" step="1" value="5"></paper-slider>
         </div>
         <div>
-            <span>paper-dropdown-menu</span>
+            <span class="tag-name">paper-dropdown-menu</span>
             <paper-dropdown-menu label="Planets">
                 <paper-listbox slot="dropdown-content" selected="1">
                     <paper-item>Earth</paper-item>
@@ -218,41 +227,41 @@
     </div>
     <div class="container">
         <div>
-            <span>paper-checkbox</span>
+            <span class="tag-name">paper-checkbox</span>
             <paper-checkbox id="id_1" checked>Checked</paper-checkbox>
             <paper-checkbox disabled>Disabled</paper-checkbox>
         </div>
         <div>
-            <span>paper-radio-button</span>
+            <span class="tag-name">paper-radio-button</span>
             <paper-radio-group selected="hot">
                 <paper-radio-button name="hot">Hot</paper-radio-button>
                 <paper-radio-button name="cold">Cold</paper-radio-button>
             </paper-radio-group>
         </div>
         <div>
-            <span>paper-spinner</span>
+            <span class="tag-name">paper-spinner</span>
             <paper-spinner active></paper-spinner>
         </div>
         <div>
-            <span>paper-progress</span>
+            <span class="tag-name">paper-progress</span>
             <paper-progress value="800" min="100" max="1000"></paper-progress>
             <paper-progress value="30" secondary-progress="70"></paper-progress>
             <paper-progress indeterminate=""></paper-progress>
         </div>
         <div style="text-align: left;">
-            <span>paper-input</span>
+            <span class="tag-name">paper-input</span>
             <paper-input placeholder="Your text..." label="Label"></paper-input>
         </div>
     </div>
 
-    <div class="dual-container">
+    <div class="quad-container">
         <div>
-            <span>paper-card</span>
+            <span class="tag-name">paper-card</span>
             <paper-card image="images/paper-sample-bg.jpg">
                 <div class="card-content">
                     House of Material Design
                     <iron-icon icon="communication:location-on"></iron-icon>
-                    <span>250ft</span>
+                    <span class="tag-name">250ft</span>
                     <iron-icon icon="star"></iron-icon>
                     <iron-icon icon="star"></iron-icon>
                     <iron-icon icon="star"></iron-icon>
@@ -269,7 +278,7 @@
             </paper-card>
         </div>
         <div>
-            <span>paper-tabs</span>
+            <span class="tag-name">paper-tabs</span>
             <style>
                 paper-tabs {
                     background: #4285f4;
@@ -282,6 +291,38 @@
                 <paper-tab>The third tab</paper-tab>
                 <paper-tab>Fourth tab</paper-tab>
             </paper-tabs>
+        </div>
+        <div>
+            <span class="tag-name">paper-snackbar</span>
+            <paper-snackbar></paper-snackbar>
+
+            <paper-button onclick="test()">Click Me</paper-button>
+
+            <script>
+                function test() {
+                    document.dispatchEvent(new CustomEvent('paper-snackbar-notify', {
+                        bubbles: true,
+                        composed: true,
+                        detail: {
+                            message: 'Hi! I am a paper-snackbar!',
+                            targetTitle: 'Magic Link',
+                            targetUrl: '#'
+                        }
+                    }));
+                }
+            </script>
+        </div>
+
+        <div style="text-align:left">
+            <span class="tag-name">paper-chip</span>
+            <paper-chip label="Closable and icon" closable>
+                <span class="chip-background" slot="avatar">
+                    <iron-icon icon="icons:favorite"></iron-icon>
+                </span>
+            </paper-chip>
+
+            <span style="margin-top:20px;" class="tag-name">paper-chip-input</span>
+            <paper-chip-input label="Enter/Backspace" items='["one", "two"]' closable></paper-chip-input>
         </div>
     </div>
 </body>

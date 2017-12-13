@@ -3,6 +3,10 @@
 
 > This is made simply for convenience and does not serve as the documentation for PolymerElements web components. For documentation, please visit: <https://www.webcomponents.org/collection/Polymer/elements>
 
+> Third party paper elements also were added which are not part of PolymerElements at the time paper-kitchen-sink was created:
+<https://www.webcomponents.org/element/justinribeiro/paper-snackbar>
+<https://www.webcomponents.org/element/ThomasCybulski/paper-chip>
+
 1) Clone the repository.
 
 ```

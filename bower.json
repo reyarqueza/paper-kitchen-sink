@@ -44,6 +44,8 @@
     "paper-swatch-picker": "PolymerElements/paper-swatch-picker#^2.0.1",
     "paper-tabs": "PolymerElements/paper-tabs#^2.0.0",
     "paper-tooltip": "PolymerElements/paper-tooltip#^2.0.1",
-    "app-layout": "PolymerElements/app-layout#^2.0.4"
+    "app-layout": "PolymerElements/app-layout#^2.0.4",
+    "paper-chip": "ThomasCybulski/paper-chip#^2.0.19",
+    "paper-snackbar": "justinribeiro/paper-snackbar#^2.0.2"
   }
 }

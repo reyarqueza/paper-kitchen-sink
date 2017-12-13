@@ -12,35 +12,35 @@ body {
     align-items: center;
 }
 
-.dual-container {
+.quad-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     padding-top: 20px;
 }
 
 .container,
-.dual-container {
+.quad-container {
     grid-column-gap: 10px;
     grid-row-gap: 10px;
 }
 
-.container div,
-.dual-container div {
+.container > div,
+.quad-container > div {
     text-align: center;
 }
 
-.container div span,
-.dual-container div span {
+.container > div .tag-name,
+.quad-container > div .tag-name {
     color: #aaa;
     display: block;
     padding-bottom: 8px;
 }
 
-.container div paper-progress,
-.container div paper-checkbox {
+.container > div paper-progress,
+.container > div paper-checkbox {
     margin-bottom: 8px;
 }
 
-.container div paper-checkbox {
+.container > div paper-checkbox {
     display: block;
 }
